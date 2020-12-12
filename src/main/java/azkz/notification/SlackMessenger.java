@@ -4,7 +4,9 @@ import com.slack.api.Slack;
 import com.slack.api.methods.SlackApiException;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class SlackMessenger {
 
@@ -30,6 +32,22 @@ public class SlackMessenger {
             logger.info("result {}", result);
         } catch (IOException | SlackApiException e) {
             logger.error("error: {}", e.getMessage(), e);
+        }
+    }
+
+    public void uploadFile(List<String> channels, String comment, File file){
+        var client = Slack.getInstance().methods();
+        try {
+            var result = client.filesUpload(r -> r
+                    .token(token)
+                    .channels(channels)
+                    .file(file)
+                    .filename(file.getName())
+                    .initialComment(comment)
+                    );
+            System.out.println(result);
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
