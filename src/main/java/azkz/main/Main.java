@@ -19,7 +19,7 @@ public class Main {
             Camera camera = new Camera(videoCapture);
 
             // 写真を撮影し、保存された画像ファイルの絶対パスを取得する。
-            String imageFilePath = camera.takePicture(System.getenv("IMAGE_DIST_DIR"));
+            String imageFilePath = camera.takePicture(System.getenv("IMAGE_SAVE_DIR"));
 
             // 絶対パスからFileオブジェクトを作成する。
             File imageFile = new File(imageFilePath);
