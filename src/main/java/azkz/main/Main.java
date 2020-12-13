@@ -4,6 +4,7 @@ import azkz.camera.Camera;
 import azkz.imagerecognition.GoogleVisionApi;
 import azkz.messenger.SlackMessenger;
 import com.google.cloud.vision.v1.EntityAnnotation;
+import org.bytedeco.opencv.opencv_videoio.VideoCapture;
 
 import java.io.File;
 import java.util.Arrays;
@@ -13,8 +14,12 @@ public class Main {
 
     public static void main(String[] args) {
         try {
+            // 使用するカメラデバイスを指定し、Cameraクラスをインスタンス化する。
+            VideoCapture videoCapture = new VideoCapture(Integer.parseInt(System.getenv("VIDEO_CAPTURE_INDEX")));
+            Camera camera = new Camera(videoCapture);
+
             // 写真を撮影し、保存された画像ファイルの絶対パスを取得する。
-            String imageFilePath = Camera.takePicture(System.getenv("IMAGE_DIST_DIR"));
+            String imageFilePath = camera.takePicture(System.getenv("IMAGE_DIST_DIR"));
 
             // 絶対パスからFileオブジェクトを作成する。
             File imageFile = new File(imageFilePath);
