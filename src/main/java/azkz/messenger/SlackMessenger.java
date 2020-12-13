@@ -1,4 +1,4 @@
-package azkz.notification;
+package azkz.messenger;
 
 import com.slack.api.Slack;
 import com.slack.api.methods.SlackApiException;
