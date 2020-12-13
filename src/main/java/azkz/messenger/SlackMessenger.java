@@ -30,8 +30,6 @@ public class SlackMessenger {
      */
     public void uploadFile(List<String> channels, String comment, File file) throws IOException, SlackApiException {
         var client = Slack.getInstance().methods();
-        // TODO ログを出力できるようにする。できればエラー原因もわかるように。
-        var logger = LoggerFactory.getLogger("my-awesome-slack-app");
         var result = client.filesUpload(r -> r
                 .token(token)
                 .channels(channels)
@@ -39,6 +37,6 @@ public class SlackMessenger {
                 .filename(file.getName())
                 .initialComment(comment)
         );
+        System.out.println(result);
     }
-
 }
