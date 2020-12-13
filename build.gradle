@@ -10,15 +10,19 @@ repositories {
 }
 
 dependencies {
+
+    // カメラ制御に関するライブラリ
     implementation 'org.bytedeco:javacv-platform:1.5.4'
-    implementation 'com.microsoft.azure.cognitiveservices:azure-cognitiveservices-computervision:1.0.4-beta'
-    implementation 'org.apache.httpcomponents:httpclient:4.5.5'
-    implementation 'org.apache.httpcomponents:httpcore:4.4.9'
-    implementation 'org.json:json:20201115'
+
+    // Slackに関するライブラリ
     implementation 'com.slack.api:bolt:1.4.0'
     implementation 'com.slack.api:bolt-servlet:1.4.0'
     implementation 'com.slack.api:bolt-jetty:1.4.0'
+
+    // Google Vision APIに関するライブラリ
     implementation 'com.google.cloud:google-cloud-vision:1.100.7'
+
+    // テストに関するライブラリ
     testImplementation platform('org.junit:junit-bom:5.7.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
