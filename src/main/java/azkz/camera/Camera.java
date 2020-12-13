@@ -10,11 +10,17 @@ import java.time.format.DateTimeFormatter;
 
 public class Camera {
 
+    private VideoCapture videoCapture;
+
+    public Camera(VideoCapture videoCapture) {
+        this.videoCapture = videoCapture;
+    }
+
     /**
      * @param destDirStr 画像保存先ディレクトリ
      * @return 撮影された画像ファイルの絶対パス
      */
-    public static String takePicture(String destDirStr) {
+    public String takePicture(String destDirStr) {
         // 引数からFileオブジェクトをインスタンス化
         File destDir = new File(destDirStr);
 
@@ -22,9 +28,6 @@ public class Camera {
         if (!destDir.exists() || !destDir.isDirectory()) {
             throw new IllegalArgumentException("指定したディレクトリが存在しない、もしくはディレクトリではありません。");
         }
-
-        // 接続(内蔵)されているカメラを指定
-        VideoCapture videoCapture = new VideoCapture(0);
 
         // マトリックスのインスタンスを生成
         Mat mat = new Mat();
