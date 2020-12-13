@@ -16,7 +16,7 @@ import java.util.List;
 public class GoogleVisionApi {
 
     /**
-     * 画像を解析する。
+     * 画像のラベル検出をする。
      * 処理内容はほぼガイドの通り。
      *
      * @param imageFile 画像ファイル
@@ -25,7 +25,7 @@ public class GoogleVisionApi {
      * @throws GoogleVisionApiException VisionAPIのレスポンスがエラーの場合の例外。
      * @see <a href="https://cloud.google.com/vision/docs/labels#java">ラベル検出のガイド</a>
      */
-    public static List<EntityAnnotation> detectImage(File imageFile) throws IOException, GoogleVisionApiException {
+    public static List<EntityAnnotation> detectLabels(File imageFile) throws IOException, GoogleVisionApiException {
         // 画像解析に使うクライアントを初期化する。
         // try-with-resourcesで処理終了後にクライアントを自動でcloseする。
         try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
