@@ -1,7 +1,7 @@
-export IMAGE_SAVE_DIR=/xxxx/xxxx/xxxx/xxx
-export GOOGLE_APPLICATION_CREDENTIALS=/xxxx/xxxx/xxxx/xxx/xxxx.json
-export SLACK_BOT_TOKEN=xoxb-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-export SLACK_CHANNEL=#general
-export VIDEO_CAPTURE_INDEX=0
+export IMAGE_SAVE_DIR="/xxxx/xxxx/xxxx/xxx"
+export GOOGLE_APPLICATION_CREDENTIALS="/xxxx/xxxx/xxxx/xxx/xxxx.json"
+export SLACK_BOT_TOKEN="xoxb-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+export SLACK_CHANNEL="#general"
+export VIDEO_CAPTURE_INDEX="0"
 
 sh gradlew run
