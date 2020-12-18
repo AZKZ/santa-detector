@@ -33,11 +33,11 @@ public class Main {
 
             // 含まれていたらSlackに画像ファイルをアップロードする。
             if (containsSanta) {
-                System.out.println("サンタいた");
+                System.out.println("Detected santa!");
                 SlackMessenger messenger = new SlackMessenger(System.getenv("SLACK_BOT_TOKEN"));
                 messenger.uploadFile(Arrays.asList(System.getenv("SLACK_CHANNEL")), "サンタが出たぞ！！！", imageFile);
             } else {
-                System.out.println("サンタいなかった。。。");
+                System.out.println("No santa...");
             }
 
         } catch (Exception e) {
