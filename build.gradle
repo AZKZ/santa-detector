@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'application'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
 }
 
 group 'org.example'
@@ -39,6 +39,8 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-application {
-    mainClass = 'azkz.main.Main'
+jar {
+    manifest {
+        attributes 'Main-Class': 'azkz.main.Main'
+    }
 }
