@@ -7,4 +7,4 @@ set SLACK_BOT_TOKEN=xoxb-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 set SLACK_CHANNEL=#general
 set VIDEO_CAPTURE_INDEX=0
 
-gradlew run
+java -jar build¥libs¥santa-detector-1.0-SNAPSHOT-all.jar
