@@ -35,6 +35,10 @@ test {
     }
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 application {
     mainClass = 'azkz.main.Main'
 }
